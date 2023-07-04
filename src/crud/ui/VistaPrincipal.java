@@ -5,6 +5,7 @@
 package crud.ui;
 
 import crud.ui.tablas.TablaPersona;
+import java.lang.reflect.Array;
 
 /**
  *
@@ -25,7 +26,15 @@ public class VistaPrincipal extends javax.swing.JFrame {
         this.tablaPrincipal.setModel(nuevoModeloTabla);
         this.setLocationRelativeTo(null);
     }
-
+    
+    public void cargarConMemoria(){
+        
+    }
+    
+    public void cargarConBD(Array parametros){
+        
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
