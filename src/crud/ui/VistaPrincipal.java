@@ -4,6 +4,7 @@
  */
 package crud.ui;
 
+import crud.ctrl.Ctrl;
 import crud.ui.tablas.TablaPersona;
 import java.lang.reflect.Array;
 
@@ -13,6 +14,8 @@ import java.lang.reflect.Array;
  */
 public class VistaPrincipal extends javax.swing.JFrame {
     private TablaPersona nuevoModeloTabla;
+    private String tipoAlmacenamiento;
+    private Ctrl control;
     /**
      * Creates new form VistaPrincipal
      */
@@ -23,16 +26,18 @@ public class VistaPrincipal extends javax.swing.JFrame {
     
     private void inicializar(){
         nuevoModeloTabla = new TablaPersona();
+        control = new Ctrl();
         this.tablaPrincipal.setModel(nuevoModeloTabla);
         this.setLocationRelativeTo(null);
     }
     
     public void cargarConMemoria(){
-        
+        this.tipoAlmacenamiento = "Almacenamiento-Memoria";
+        this.control.cargarDatos(this.tipoAlmacenamiento,this.nuevoModeloTabla);
     }
     
     public void cargarConBD(Array parametros){
-        
+        this.tipoAlmacenamiento = "Almacenamiento-BD";
     }
     
     /**
