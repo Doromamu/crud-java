@@ -4,6 +4,8 @@
  */
 package crud;
 
+import crud.ui.VistaOpciones;
+
 /**
  *
  * @author misa6
@@ -14,7 +16,8 @@ public class Run {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        VistaOpciones vistaInicio = new VistaOpciones();
+        vistaInicio.setVisible(true);
     }
     
 }

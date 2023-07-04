@@ -15,15 +15,13 @@ public class Persona {
                     nombre,
                     apellidoPaterno,
                     apellidoMaterno;
-    private Date    fechaDeNacimiento;
     private Usuario usuario;
 
-    public Persona(String id, String nombre, String apellidoPaterno, String apellidoMaterno, Date fechaDeNacimiento, Usuario usuario) {
+    public Persona(String id, String nombre, String apellidoPaterno, String apellidoMaterno, Usuario usuario) {
         this.id = id;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
-        this.fechaDeNacimiento = fechaDeNacimiento;
         this.usuario = usuario;
     }
     
@@ -49,10 +47,6 @@ public class Persona {
         return apellidoMaterno;
     }
 
-    public Date getFechaDeNacimiento() {
-        return fechaDeNacimiento;
-    }
-
     public Usuario getUsuario() {
         return usuario;
     }
@@ -74,11 +68,7 @@ public class Persona {
     public void setApellidoMaterno(String apellidoMaterno) {
         this.apellidoMaterno = apellidoMaterno;
     }
-
-    public void setFechaDeNacimiento(Date fechaDeNacimiento) {
-        this.fechaDeNacimiento = fechaDeNacimiento;
-    }
-
+    
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }

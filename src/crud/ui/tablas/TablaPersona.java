@@ -5,7 +5,6 @@
 package crud.ui.tablas;
 
 import crud.el.Persona;
-import java.util.Date;
 
 /**
  *
@@ -15,7 +14,7 @@ public class TablaPersona extends NuevoModeloTabla{
 
     @Override
     public int getColumnCount() {
-        return 12;
+        return 8;
     }
 
     @Override
@@ -25,11 +24,9 @@ public class TablaPersona extends NuevoModeloTabla{
             case 1 -> "Nombre";
             case 2 -> "Apellido Paterno";
             case 3 -> "Apellido Materno";
-            case 4 -> "Fecha de nacimiento";
-            case 5 -> "Nombre de usuario";
-            case 6 -> "Contraseña";
-            case 7 -> "Rol";
-            default -> "Fecha de alta";
+            case 4 -> "Nombre de usuario";
+            case 5 -> "Contraseña";
+            default -> "Rol";
         };
     }
 
@@ -40,11 +37,9 @@ public class TablaPersona extends NuevoModeloTabla{
             case 1 -> String.class;
             case 2 -> String.class;
             case 3 -> String.class;
-            case 4 -> Date.class;
+            case 4 -> String.class;
             case 5 -> String.class;
-            case 6 -> String.class;
-            case 7 -> String.class;
-            default -> Date.class;
+            default -> String.class;
         };
     }
 
@@ -61,11 +56,9 @@ public class TablaPersona extends NuevoModeloTabla{
             case 1 -> persona.getNombre();
             case 2 -> persona.getApellidoPaterno();
             case 3 -> persona.getApellidoMaterno();
-            case 4 -> persona.getFechaDeNacimiento();
-            case 5 -> persona.getUsuario().getNombreUsuario();
-            case 6 -> persona.getUsuario().getContrasena();
-            case 7 -> persona.getUsuario().getRol();
-            default -> persona.getUsuario().getFechaDeAlta();
+            case 4 -> persona.getUsuario().getNombreUsuario();
+            case 5 -> persona.getUsuario().getContrasena();
+            default -> persona.getUsuario().getRol();
         };
     }
 
@@ -77,11 +70,9 @@ public class TablaPersona extends NuevoModeloTabla{
             case 1: persona.setNombre((String) nuevoValor);
             case 2: persona.setApellidoPaterno((String) nuevoValor);
             case 3: persona.setApellidoMaterno((String) nuevoValor);
-            case 4: persona.setFechaDeNacimiento((Date) nuevoValor);
-            case 5: persona.getUsuario().setNombreUsuario((String) nuevoValor);
-            case 6: persona.getUsuario().setContrasena((String) nuevoValor);
-            case 7: persona.getUsuario().setRol((String) nuevoValor);
-            case 8: persona.getUsuario().setFechaDeAlta((Date) nuevoValor);
+            case 4: persona.getUsuario().setNombreUsuario((String) nuevoValor);
+            case 5: persona.getUsuario().setContrasena((String) nuevoValor);
+            case 6: persona.getUsuario().setRol((String) nuevoValor);
         }
     }
     

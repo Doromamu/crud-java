@@ -14,13 +14,11 @@ public class Usuario {
     private String nombreUsuario,
                    contrasena,
                    rol;
-    private Date fechaDeAlta;
 
-    public Usuario(String nombreUsuario, String contrasena, String rol, Date fechaDeAlta) {
+    public Usuario(String nombreUsuario, String contrasena, String rol) {
         this.nombreUsuario = nombreUsuario;
         this.contrasena = contrasena;
         this.rol = rol;
-        this.fechaDeAlta = fechaDeAlta;
     }
     
     public Usuario(){
@@ -39,10 +37,6 @@ public class Usuario {
     public String getRol() {
         return rol;
     }
-
-    public Date getFechaDeAlta() {
-        return fechaDeAlta;
-    }
     
     //Setters
 
@@ -56,10 +50,6 @@ public class Usuario {
 
     public void setRol(String rol) {
         this.rol = rol;
-    }
-
-    public void setFechaDeAlta(Date fechaDeAlta) {
-        this.fechaDeAlta = fechaDeAlta;
     }
     
 }
