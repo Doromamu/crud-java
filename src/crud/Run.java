@@ -4,7 +4,7 @@
  */
 package crud;
 
-import crud.ui.VistaOpciones;
+import crud.ctrl.Ctrl;
 
 /**
  *
@@ -16,8 +16,7 @@ public class Run {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        VistaOpciones vistaInicio = new VistaOpciones();
-        vistaInicio.setVisible(true);
+        Ctrl control = new Ctrl();
     }
     
 }

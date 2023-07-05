@@ -7,6 +7,7 @@ package crud.ui;
 import crud.ctrl.Ctrl;
 import crud.ui.tablas.TablaPersona;
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 /**
  *
@@ -26,18 +27,20 @@ public class VistaPrincipal extends javax.swing.JFrame {
     
     private void inicializar(){
         nuevoModeloTabla = new TablaPersona();
-        control = new Ctrl();
         this.tablaPrincipal.setModel(nuevoModeloTabla);
         this.setLocationRelativeTo(null);
     }
     
-    public void cargarConMemoria(){
-        this.tipoAlmacenamiento = "Almacenamiento-Memoria";
-        this.control.cargarDatos(this.tipoAlmacenamiento,this.nuevoModeloTabla);
+    public void cargarDatosTabla(ArrayList listaPersonas){
+        this.nuevoModeloTabla.agregarLista(listaPersonas);
     }
     
-    public void cargarConBD(Array parametros){
-        this.tipoAlmacenamiento = "Almacenamiento-BD";
+    public void setControl(Ctrl control){
+        this.control = control;
+    }
+    
+    public void setTipoAlmacenamiento(String tipoAlamacenamiento){
+        this.tipoAlmacenamiento = tipoAlamacenamiento;
     }
     
     /**
@@ -100,6 +103,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tablaPrincipal);
 
         btnEliminar.setText("Eliminar");
+        btnEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEliminarMouseClicked(evt);
+            }
+        });
 
         btnActualizar.setText("Actualizar");
 
@@ -153,6 +161,10 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarMouseClicked
+        this.control.eliminarDato(tipoAlmacenamiento, nuevoModeloTabla, this.tablaPrincipal.getSelectedRow());
+    }//GEN-LAST:event_btnEliminarMouseClicked
 
     /**
      * @param args the command line arguments

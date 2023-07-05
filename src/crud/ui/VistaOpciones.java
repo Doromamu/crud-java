@@ -4,12 +4,15 @@
  */
 package crud.ui;
 
+import crud.ctrl.Ctrl;
+
 /**
  *
  * @author misa6
  */
 public class VistaOpciones extends javax.swing.JFrame {
-
+    private Ctrl control;
+    private String tipoAlmacenamiento;
     /**
      * Creates new form VistaOpciones
      */
@@ -21,6 +24,10 @@ public class VistaOpciones extends javax.swing.JFrame {
     private void inicializar(){
         this.setLocationRelativeTo(null);
         this.RBtnBD.setSelected(true);
+    }
+    
+    public void setControl(Ctrl control){
+        this.control = control;
     }
     
     /**
@@ -186,6 +193,7 @@ public class VistaOpciones extends javax.swing.JFrame {
         this.inputDataBase.setEnabled(true);
         this.inputPassword.setEnabled(true);
         this.inputUserName.setEnabled(true);
+        this.tipoAlmacenamiento = "Almacenamiento-BD";
     }//GEN-LAST:event_RBtnBDMouseClicked
 
     private void RBtnMemoriMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RBtnMemoriMouseClicked
@@ -194,14 +202,11 @@ public class VistaOpciones extends javax.swing.JFrame {
         this.inputDataBase.setEnabled(false);
         this.inputPassword.setEnabled(false);
         this.inputUserName.setEnabled(false);
+        this.tipoAlmacenamiento = "Almacenamiento-Memoria";
     }//GEN-LAST:event_RBtnMemoriMouseClicked
 
     private void btnIniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIniciarMouseClicked
-        VistaPrincipal dashBoard = new VistaPrincipal();
-        if(this.RBtnMemori.isSelected())
-            dashBoard.cargarConMemoria();
-        dashBoard.setVisible(true);
-        this.dispose();
+        this.control.cargarDatos(tipoAlmacenamiento,this);
     }//GEN-LAST:event_btnIniciarMouseClicked
 
     /**
